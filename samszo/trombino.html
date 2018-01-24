@@ -57,7 +57,7 @@ var vals = {"Pas besoin":1, "Besoin d'approfondissement":5, "Besoin urgent":10, 
 
 //récupération des photos du groupe flickr
 //merci beaucoup à https://etienner.fr/flickr-json
-var urlFlickr = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=79672885f8a018343cd8849f57e8a50a&photoset_id=72157686701939221&extras=original_format&format=json&jsoncallback=?"; 
+var urlFlickr = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=79672885f8a018343cd8849f57e8a50a&photoset_id=72157691842376304&extras=original_format&format=json&jsoncallback=?"; 
 $.getJSON(urlFlickr,
 function(data){
 	dataPhoto = data;
@@ -73,7 +73,7 @@ function(data){
     Fin de la boucle*/
 
 	//récupération des données du formulaire google
-	var url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4vIu2pcoPH6Vng35aQzwRAxQV9ogt8B9fyp-3cr1aVEdEh5rAhDfj_sB7OYoeLRZGalhq1trkCLRd/pub?gid=2097717787&single=true&output=csv';
+	var url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQp7S2oy16Ft_Ns-JL1tjdj01MYvUpdaQD1hBiuVgBFLT_Q7CMaa4VdEhr1PTzwh_xgynwHU3r_opkd/pub?gid=1179672232&single=true&output=csv';
     //var url = "data/LPDesignWebMobile_17-18.csv";        
 	d3.csv(url, function(data) {
 		dataForm = data;
@@ -172,6 +172,8 @@ function(data){
 				    		});		
 	});
 });
+
+var toto = 1;
 
 function drawGraphReponse(idE, titre, data){
 	/*à voir si dimple marche mieux
