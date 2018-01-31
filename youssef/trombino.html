@@ -60,10 +60,12 @@
 
 var dataPhoto, dataForm;
 //var vals = {"Pas besoin":1, "Besoin d'approfondissement":5, "Besoin urgent":10, "je ne connais pas du tout":1,"je connais un peu":5,"je me débrouille":10,"je suis expert(e)":20}; this is for another google form, 
-var vals = {"pas bon":15,"mauvais":5,"trop fort":20,"genie":50,"médiocre":10,"connais pas":1};
+var vals = {"pas bon":15,"mauvais":5,"trop fort":20,"genie":50,"médiocre":10,"connais pas":1,"souvent":20,"jamais":1,"parfois":10,"abusé":30};
 
 //récupération des photos du groupe flickr
 //merci beaucoup à https://etienner.fr/flickr-json
+
+// i added the rest of the values needed for graphes : images , loisirs and réseau social.
 var urlFlickr = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=79672885f8a018343cd8849f57e8a50a&photoset_id=72157691842376304&extras=original_format&format=json&jsoncallback=?"; 
 $.getJSON(urlFlickr,
 function(data){
@@ -95,35 +97,35 @@ function(data){
 
 
 
+				//alert("i"+ i +"value "+n); i used this just to see if the value are undefined.
+				if (n != null )
+				{
+						// the correct form to check.
+						if(i.indexOf("langage informatique")!== -1){
+							d.reponses.competences.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
+						  
+						}
+						if(i.indexOf("CMS")!== -1){
+							d.reponses.cms.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
+							
+						}
+						if(i.indexOf("logiciel")!== -1){
+							d.reponses.logiciel.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
+						   
+						}							
+						if(i.indexOf("Langues")!== -1){
+							d.reponses.langues.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
+							
+						}
+						if(i.indexOf("Loisirs")!== -1){
+							d.reponses.loisirs.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
+							
+						}
+						if(i.indexOf("Réseau social")!== -1){
+							d.reponses.reseausocial.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
+						}
 
-                // there is a probleme in the csv file , (s"Langues" , "loisirs","reseausocial" doesn't exist in the file csv) 
-
-
-				if(i.indexOf("langage informatique")>0){
-					d.reponses.competences.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-                    
 				}
-                if(i.indexOf("CMS")>0){
-                    d.reponses.cms.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-                    
-                }
-				if(i.indexOf("logiciel")>0){
-					d.reponses.logiciel.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-                   
-				}							
-                if(i.indexOf("Langues")>0){
-                    d.reponses.langues.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-                    
-                }
-                if(i.indexOf("Loisirs")>0){
-                    d.reponses.loisirs.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-                    
-                }
-                if(i.indexOf("Réseau social")>0){
-                    d.reponses.reseausocial.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-                }
-
-
               //just for test 
               /* else
                 {
@@ -246,7 +248,7 @@ function drawGraphReponse(idE, titre, data){
     //
 	var donut = donutChart()
 	    .width(200)// i increased a bit the width 
-	    .height(200)// i increased a bit the width 
+	    .height(200)// i increased a bit the height 
 	    .cornerRadius(3) // sets how rounded the corners are on each slice
 	    .padAngle(0.015) // effectively dictates the gap between slices
 	    .variable('importance')
