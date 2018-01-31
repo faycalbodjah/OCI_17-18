@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -15,6 +15,11 @@
 		.card-title:first-letter{
 			text-transform: uppercase;
 		}
+
+
+
+
+
 		/*pour le donuts merci à https://bl.ocks.org/mbhall88/b2504f8f3e384de4ff2b9dfa60f325e2 */
 		polyline{
 		    opacity: .3;
@@ -135,9 +140,10 @@ function(data){
 	  			.attr('class','card-img-top')
 	  			.attr('src',function(d) { 
 		    			var item = dataPhoto.photoset.photo[d['num photo']];
-			        var src = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_q.jpg';
+						if(item != null )
+						var src = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '//' + item.id + '_' + item.secret + '_q.jpg';
 		    			return src; 
-			    		});
+			    		}); 
 	  	//ajoute l'overlay sur l'image pour le tooltip du diagramme
 	  	cards.append("div")
 	  			.attr('id',function(d) {return 'imgOver'+d['num photo']})
@@ -147,11 +153,11 @@ function(data){
 		var cardBody = cards.append('div').attr('class','card-body');
 		cardBody.append('h4').attr('class','card-title')	  			
 	    			.text(function(d) { 
-		    			return d['Votre prénom'].toLowerCase(); 
+		    			return d['Prénom'].toLowerCase(); 
 				    		});
 		cardBody.append('h5').attr('class','card-title')	  			
 			.text(function(d) { 
-				return d['Votre nom'].toLowerCase(); 
+				return d['Nom'].toLowerCase(); 
 		    		});
 		//construction du layout pour les graphiques
 		var html = '<div class="container"><div class="row">';
@@ -168,7 +174,7 @@ function(data){
 					drawGraphReponse("#etudNum_"+i+"_Col1", 'Besoins', d.reponses.besoins);
 					drawGraphReponse("#etudNum_"+i+"_Col2", 'Compétences', d.reponses.competences);
 					drawGraphReponse("#etudNum_"+i+"_Col3", 'Outils', d.reponses.outils);
-		    			return d['Votre mail'].toLowerCase(); 
+		    			return d['E-mail'].toLowerCase(); 
 				    		});		
 	});
 });
