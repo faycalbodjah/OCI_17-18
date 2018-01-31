@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -15,11 +15,6 @@
 		.card-title:first-letter{
 			text-transform: uppercase;
 		}
-
-
-
-
-
 		/*pour le donuts merci à https://bl.ocks.org/mbhall88/b2504f8f3e384de4ff2b9dfa60f325e2 */
 		polyline{
 		    opacity: .3;
@@ -140,10 +135,10 @@ function(data){
 	  			.attr('class','card-img-top')
 	  			.attr('src',function(d) { 
 		    			var item = dataPhoto.photoset.photo[d['num photo']];
-						if(item != null )
-						var src = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '//' + item.id + '_' + item.secret + '_q.jpg';
+		    			if(item != null)
+			        var src = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_q.jpg';
 		    			return src; 
-			    		}); 
+			    		});
 	  	//ajoute l'overlay sur l'image pour le tooltip du diagramme
 	  	cards.append("div")
 	  			.attr('id',function(d) {return 'imgOver'+d['num photo']})
@@ -153,7 +148,7 @@ function(data){
 		var cardBody = cards.append('div').attr('class','card-body');
 		cardBody.append('h4').attr('class','card-title')	  			
 	    			.text(function(d) { 
-		    			return d['Prénom'].toLowerCase(); 
+		    			return d['prénom'].toLowerCase(); 
 				    		});
 		cardBody.append('h5').attr('class','card-title')	  			
 			.text(function(d) { 
