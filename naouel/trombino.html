@@ -49,23 +49,14 @@
 		<div class="row" id="etuCards" >
 		</div>
 	</div>	
-
-    <!-- just for test -->
-   <!-- <div class="freebirdFormviewerViewItemsItemItemTitle freebirdCustomFont" dir="auto" id="i156" role="heading" aria-level="2" aria-describedby="i.desc.2089997070">Langues</div>
-
-
-<div class="freebirdFormviewerViewItemsItemItemTitle freebirdCustomFont" dir="auto" id="i90" role="heading" aria-level="2" aria-describedby="i.desc.83169604">Vos compétences : logiciel</div>-->
 			
 <script>
 
 var dataPhoto, dataForm;
-//var vals = {"Pas besoin":1, "Besoin d'approfondissement":5, "Besoin urgent":10, "je ne connais pas du tout":1,"je connais un peu":5,"je me débrouille":10,"je suis expert(e)":20}; this is for another google form, 
-var vals = {"pas bon":15,"mauvais":5,"trop fort":20,"genie":50,"médiocre":10,"connais pas":1,"souvent":20,"jamais":1,"parfois":10,"abusé":30};
+var vals = {"Pas besoin":1, "Besoin d'approfondissement":5, "Besoin urgent":10, "je ne connais pas du tout":1,"je connais un peu":5,"je me débrouille":10,"je suis expert(e)":20};
 
 //récupération des photos du groupe flickr
 //merci beaucoup à https://etienner.fr/flickr-json
-
-// i added the rest of the values needed for graphes : images , loisirs and réseau social.
 var urlFlickr = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=79672885f8a018343cd8849f57e8a50a&photoset_id=72157691842376304&extras=original_format&format=json&jsoncallback=?"; 
 $.getJSON(urlFlickr,
 function(data){
@@ -89,50 +80,21 @@ function(data){
 		
 		//réorganise les datas
 		dataForm.forEach(function(d){
-			d.reponses = {/*'besoins':[],*/'competences':[],'cms':[],'logiciel':[],'langues':[],'loisirs':[],'reseausocial':[]};
+			d.reponses = {'besoins':[],'competences':[],'outils':[]};
 			for (let i in d) {
 				var prop = i.substring(i.indexOf("[")+1,i.indexOf("]")); 
 				var v = d[i];
 				var n = vals[v];
-
-
-
-				//alert("i"+ i +"value "+n); i used this just to see if the value are undefined.
-				if (n != null )
-				{
-						// the correct form to check.
-						if(i.indexOf("langage informatique")!== -1){
-							d.reponses.competences.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-						  
-						}
-						if(i.indexOf("CMS")!== -1){
-							d.reponses.cms.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-							
-						}
-						if(i.indexOf("logiciel")!== -1){
-							d.reponses.logiciel.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-						   
-						}							
-						if(i.indexOf("Langues")!== -1){
-							d.reponses.langues.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-							
-						}
-						if(i.indexOf("Loisirs")!== -1){
-							d.reponses.loisirs.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-							
-						}
-						if(i.indexOf("Réseau social")!== -1){
-							d.reponses.reseausocial.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-						}
-
+				if(i.indexOf("besoins")>0){
+					d.reponses.besoins.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
+					//d.reponses.push({'besoins':prop,'val':n,'lib':v});
 				}
-              //just for test 
-              /* else
-                {
-                    d.reponses.reseausocial.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-                    alert(i);
-                }*/
-
+				if(i.indexOf("compétences")>0){
+					d.reponses.competences.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
+				}
+				if(i.indexOf("outils utilisez")>0){
+					d.reponses.outils.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
+				}							
 			}
 		});		
 		
@@ -173,15 +135,10 @@ function(data){
 	  			.attr('class','card-img-top')
 	  			.attr('src',function(d) { 
 		    			var item = dataPhoto.photoset.photo[d['num photo']];
-			        if(item != null)
-					 var src = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '//' + item.id + '_' + item.secret + '_q.jpg';
-					
-                    // As we can see in the csv file malek hadn't any value for picture, so item will be undefined , i just added a test for the variable item to solve the probleme
-                    // just for test 
-                    // var src = 'http://farm5.static.flickr.com/4649//25001837827_c8d42f39b2_q.jpg'; 
-		
-		    						return src; 
-			    		});
+						if(item != null )
+						var src = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '//' + item.id + '_' + item.secret + '_q.jpg';
+		    			return src; 
+			    		}); 
 	  	//ajoute l'overlay sur l'image pour le tooltip du diagramme
 	  	cards.append("div")
 	  			.attr('id',function(d) {return 'imgOver'+d['num photo']})
@@ -202,9 +159,6 @@ function(data){
 		html += '<div id="etudNum__Col1" class="col-sm"></div>';
 		html += '<div id="etudNum__Col2" class="col-sm"></div>';
 		html += '<div id="etudNum__Col3" class="col-sm"></div>';
-        html += '<div id="etudNum__Col4" class="col-sm"></div>';
-        html += '<div id="etudNum__Col5" class="col-sm"></div>';
-        html += '<div id="etudNum__Col6" class="col-sm"></div>';
 		html += '</div></div>';
 		cardBody.append('div').attr('class','card-text').attr('id',function(d, i) { return 'etudNum_'+i; })
 			.html(function(d, i) { return html.replace(/__/gi, "_"+i+"_");});	  			
@@ -212,18 +166,13 @@ function(data){
 			.append('small').attr('class','text-muted')
 			.text(function(d, i) {
 					//charge le graph des réponses
-					//drawGraphReponse("#etudNum_"+i+"_Col1", 'Besoins', d.reponses.besoins);
-					drawGraphReponse("#etudNum_"+i+"_Col1", 'Langages Info', d.reponses.competences);
-					drawGraphReponse("#etudNum_"+i+"_Col2", 'CMS', d.reponses.cms);
-                    drawGraphReponse("#etudNum_"+i+"_Col3", 'Logiciel', d.reponses.logiciel);
-                    drawGraphReponse("#etudNum_"+i+"_Col4", 'Langues', d.reponses.langues);
-                    drawGraphReponse("#etudNum_"+i+"_Col5", 'Loisirs', d.reponses.loisirs);
-                    drawGraphReponse("#etudNum_"+i+"_Col6", 'Réseau Social', d.reponses.reseausocial);
+					drawGraphReponse("#etudNum_"+i+"_Col1", 'Besoins', d.reponses.besoins);
+					drawGraphReponse("#etudNum_"+i+"_Col2", 'Compétences', d.reponses.competences);
+					drawGraphReponse("#etudNum_"+i+"_Col3", 'Outils', d.reponses.outils);
 		    			return d['E-mail'].toLowerCase(); 
 				    		});		
 	});
 });
-
 
 var toto = 1;
 
@@ -247,8 +196,8 @@ function drawGraphReponse(idE, titre, data){
     */
     //
 	var donut = donutChart()
-	    .width(200)// i increased a bit the width 
-	    .height(200)// i increased a bit the height 
+	    .width(160)
+	    .height(160)
 	    .cornerRadius(3) // sets how rounded the corners are on each slice
 	    .padAngle(0.015) // effectively dictates the gap between slices
 	    .variable('importance')
