@@ -85,7 +85,7 @@ function(data){
 				var v = d[i];
 				var n = vals[v];
 
-				var tmpFix = d['Nom'] == 'JAATAR' ? 999 : d['num photo'];
+				var tmpFix = d['num photo'];
 				
 				if(i.includes("Réseau social"))
 					d.reponses.reseausocial.push({'prop':prop,'importance':n,'expression':v,'id':tmpFix});
@@ -141,8 +141,8 @@ function(data){
 			.append("div").attr('class','card');
 	  	cards.append("img")
 	  			.attr('id',function(d) {
-					if(d['Nom'] == 'JAATAR')
-						return 'imgCard999';
+					//if(d['Nom'] == 'JAATAR')
+					//	return 'imgCard999';
 					return 'imgCard'+d['num photo'];
 					})
 	  			.attr('class','card-img-top')
@@ -150,8 +150,8 @@ function(data){
 		    		var item = dataPhoto.photoset.photo[d['num photo']];
 						if(item != null)
 						{
-							if(d['Nom'] == 'JAATAR')
-								return 'img.jpg';
+							//if(d['Nom'] == 'JAATAR')
+							//	return 'img.jpg';
 							var src = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '//' + item.id + '_' + item.secret + '_q.jpg';
 							return src; 
 						}
@@ -159,8 +159,8 @@ function(data){
 	  	//ajoute l'overlay sur l'image pour le tooltip du diagramme
 	  	cards.append("div")
 	  			.attr('id',function(d) {
-					if(d['Nom'] == 'JAATAR')
-						return 'imgOver999';
+					//if(d['Nom'] == 'JAATAR')
+					//	return 'imgOver999';
 					return 'imgOver'+d['num photo'];
 					})
 	  			.attr('class','card-img-overlay')
