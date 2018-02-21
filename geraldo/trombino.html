@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Design Web Mobile : trombinoscope des étudiants 17-18</title>
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		
+
 	    <!-- Bootstrap CSS -->
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 		<script src="https://d3js.org/d3.v4.min.js"></script>
@@ -21,19 +21,19 @@
 		    stroke: black;
 		    stroke-width: 2px;
 		    fill: none;
-		}		
+		}
 		/* Make the percentage on the text labels bold*/
 		.labelName tspan {
 		    font-style: normal;
 		    font-weight: 700;
-		}		
+		}
 		/* In biology we generally italicise species names. */
 		.labelName {
 		    font-size: 0.9em;
 		    font-style: italic;
 		}
-		
-		
+
+
 		</style>
 	</head>
 <body>
@@ -48,25 +48,16 @@
 	<div class="container">
 		<div class="row" id="etuCards" >
 		</div>
-	</div>	
+	</div>
 
-    <!-- just for test -->
-   <!-- <div class="freebirdFormviewerViewItemsItemItemTitle freebirdCustomFont" dir="auto" id="i156" role="heading" aria-level="2" aria-describedby="i.desc.2089997070">Langues</div>
-
-
-<div class="freebirdFormviewerViewItemsItemItemTitle freebirdCustomFont" dir="auto" id="i90" role="heading" aria-level="2" aria-describedby="i.desc.83169604">Vos compétences : logiciel</div>-->
-			
 <script>
 
 var dataPhoto, dataForm;
-//var vals = {"Pas besoin":1, "Besoin d'approfondissement":5, "Besoin urgent":10, "je ne connais pas du tout":1,"je connais un peu":5,"je me débrouille":10,"je suis expert(e)":20}; this is for another google form, 
-var vals = {"pas bon":15,"mauvais":5,"trop fort":20,"genie":50,"médiocre":10,"connais pas":1,"souvent":20,"jamais":1,"parfois":10,"abusé":30};
+var vals = {"Pas besoin":1, "Besoin d'approfondissement":5, "Besoin urgent":10, "je ne connais pas du tout":1,"je connais un peu":5,"je me débrouille":10,"je suis expert(e)":20};
 
 //récupération des photos du groupe flickr
 //merci beaucoup à https://etienner.fr/flickr-json
-
-// i added the rest of the values needed for graphes : images , loisirs and réseau social.
-var urlFlickr = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=79672885f8a018343cd8849f57e8a50a&photoset_id=72157691842376304&extras=original_format&format=json&jsoncallback=?"; 
+var urlFlickr = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=79672885f8a018343cd8849f57e8a50a&photoset_id=72157686701939221&extras=original_format&format=json&jsoncallback=?";
 $.getJSON(urlFlickr,
 function(data){
 	dataPhoto = data;
@@ -82,77 +73,48 @@ function(data){
     Fin de la boucle*/
 
 	//récupération des données du formulaire google
-	var url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQp7S2oy16Ft_Ns-JL1tjdj01MYvUpdaQD1hBiuVgBFLT_Q7CMaa4VdEhr1PTzwh_xgynwHU3r_opkd/pub?gid=1179672232&single=true&output=csv';
-    //var url = "data/LPDesignWebMobile_17-18.csv";        
+	var url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4vIu2pcoPH6Vng35aQzwRAxQV9ogt8B9fyp-3cr1aVEdEh5rAhDfj_sB7OYoeLRZGalhq1trkCLRd/pub?gid=2097717787&single=true&output=csv';
+    //var url = "data/LPDesignWebMobile_17-18.csv";
 	d3.csv(url, function(data) {
 		dataForm = data;
-		
+
 		//réorganise les datas
 		dataForm.forEach(function(d){
-			d.reponses = {/*'besoins':[],*/'competences':[],'cms':[],'logiciel':[],'langues':[],'loisirs':[],'reseausocial':[]};
+			d.reponses = {'besoins':[],'competences':[],'outils':[]};
 			for (let i in d) {
-				var prop = i.substring(i.indexOf("[")+1,i.indexOf("]")); 
+				var prop = i.substring(i.indexOf("[")+1,i.indexOf("]"));
 				var v = d[i];
 				var n = vals[v];
-
-
-
-				//alert("i"+ i +"value "+n); i used this just to see if the value are undefined.
-				if (n != null )
-				{
-						// the correct form to check.
-						if(i.indexOf("langage informatique")!== -1){
-							d.reponses.competences.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-						  
-						}
-						if(i.indexOf("CMS")!== -1){
-							d.reponses.cms.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-							
-						}
-						if(i.indexOf("logiciel")!== -1){
-							d.reponses.logiciel.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-						   
-						}							
-						if(i.indexOf("Langues")!== -1){
-							d.reponses.langues.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-							
-						}
-						if(i.indexOf("Loisirs")!== -1){
-							d.reponses.loisirs.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-							
-						}
-						if(i.indexOf("Réseau social")!== -1){
-							d.reponses.reseausocial.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-						}
-
+				if(i.indexOf("besoins")>0){
+					d.reponses.besoins.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
+					//d.reponses.push({'besoins':prop,'val':n,'lib':v});
 				}
-              //just for test 
-              /* else
-                {
-                    d.reponses.reseausocial.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
-                    alert(i);
-                }*/
-
+				if(i.indexOf("compétences")>0){
+					d.reponses.competences.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
+				}
+				if(i.indexOf("outils utilisez")>0){
+					d.reponses.outils.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
+				}
 			}
-		});		
-		
-		
+		});
+
+
 		/*construction simple
 		var arrDiv = d3.select("#container")
 	  		.selectAll("div")
 	  		.data(data)
 	  		.enter().append("div")
-		    .text(function(d) { 
-		    		return d['Votre prénom'].toLowerCase() + ' ' + d['Votre nom'].toLowerCase(); 
-		    	});		
+		    .text(function(d) {
+		    		return d['Votre prénom'].toLowerCase() + ' ' + d['Votre nom'].toLowerCase();
+		    	});
 		arrDiv.append("img")
-		    .attr('src',function(d) { 
+		    .attr('src',function(d) {
 		    		var item = dataPhoto.photoset.photo[d['num photo']];
 		        var src = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_s.jpg';
-	    			return src; 
+	    			return src;
 	    		});
 		*/
-		
+
 		/*construction bootstrap
 		merci à https://getbootstrap.com/docs/4.0/components/card/
 			<div class="col-sm-3 mb-4">
@@ -171,16 +133,10 @@ function(data){
 	  	cards.append("img")
 	  			.attr('id',function(d) {return 'imgCard'+d['num photo']})
 	  			.attr('class','card-img-top')
-	  			.attr('src',function(d) { 
+	  			.attr('src',function(d) {
 		    			var item = dataPhoto.photoset.photo[d['num photo']];
-			        if(item != null)
-					 var src = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '//' + item.id + '_' + item.secret + '_q.jpg';
-					
-                    // As we can see in the csv file malek hadn't any value for picture, so item will be undefined , i just added a test for the variable item to solve the probleme
-                    // just for test 
-                    // var src = 'http://farm5.static.flickr.com/4649//25001837827_c8d42f39b2_q.jpg'; 
-		
-		    						return src; 
+			        var src = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_q.jpg';
+		    			return src;
 			    		});
 	  	//ajoute l'overlay sur l'image pour le tooltip du diagramme
 	  	cards.append("div")
@@ -189,43 +145,33 @@ function(data){
 	  			.style('height','50%');
   		//ajoute le corps de la carte
 		var cardBody = cards.append('div').attr('class','card-body');
-		cardBody.append('h4').attr('class','card-title')	  			
-	    			.text(function(d) { 
-		    			return d['Prénom'].toLowerCase(); 
+		cardBody.append('h4').attr('class','card-title')
+	    			.text(function(d) {
+		    			return d['Prénom'].toLowerCase();
 				    		});
-		cardBody.append('h5').attr('class','card-title')	  			
-			.text(function(d) { 
-				return d['Nom'].toLowerCase(); 
+		cardBody.append('h5').attr('class','card-title')
+			.text(function(d) {
+				return d['Nom'].toLowerCase();
 		    		});
 		//construction du layout pour les graphiques
 		var html = '<div class="container"><div class="row">';
 		html += '<div id="etudNum__Col1" class="col-sm"></div>';
 		html += '<div id="etudNum__Col2" class="col-sm"></div>';
 		html += '<div id="etudNum__Col3" class="col-sm"></div>';
-        html += '<div id="etudNum__Col4" class="col-sm"></div>';
-        html += '<div id="etudNum__Col5" class="col-sm"></div>';
-        html += '<div id="etudNum__Col6" class="col-sm"></div>';
 		html += '</div></div>';
 		cardBody.append('div').attr('class','card-text').attr('id',function(d, i) { return 'etudNum_'+i; })
-			.html(function(d, i) { return html.replace(/__/gi, "_"+i+"_");});	  			
+			.html(function(d, i) { return html.replace(/__/gi, "_"+i+"_");});
 		cards.append('div').attr('class','card-footer')
 			.append('small').attr('class','text-muted')
 			.text(function(d, i) {
 					//charge le graph des réponses
-					//drawGraphReponse("#etudNum_"+i+"_Col1", 'Besoins', d.reponses.besoins);
-					drawGraphReponse("#etudNum_"+i+"_Col1", 'Langages Info', d.reponses.competences);
-					drawGraphReponse("#etudNum_"+i+"_Col2", 'CMS', d.reponses.cms);
-                    drawGraphReponse("#etudNum_"+i+"_Col3", 'Logiciel', d.reponses.logiciel);
-                    drawGraphReponse("#etudNum_"+i+"_Col4", 'Langues', d.reponses.langues);
-                    drawGraphReponse("#etudNum_"+i+"_Col5", 'Loisirs', d.reponses.loisirs);
-                    drawGraphReponse("#etudNum_"+i+"_Col6", 'Réseau Social', d.reponses.reseausocial);
-		    			return d['E-mail'].toLowerCase(); 
-				    		});		
+					drawGraphReponse("#etudNum_"+i+"_Col1", 'Besoins', d.reponses.besoins);
+					drawGraphReponse("#etudNum_"+i+"_Col2", 'Compétences', d.reponses.competences);
+					drawGraphReponse("#etudNum_"+i+"_Col3", 'Outils', d.reponses.outils);
+		    			return d['E-mail'].toLowerCase();
+				    		});
 	});
 });
-
-
-var toto = 1;
 
 function drawGraphReponse(idE, titre, data){
 	/*à voir si dimple marche mieux
@@ -247,8 +193,8 @@ function drawGraphReponse(idE, titre, data){
     */
     //
 	var donut = donutChart()
-	    .width(200)// i increased a bit the width 
-	    .height(200)// i increased a bit the height 
+	    .width(160)
+	    .height(160)
 	    .cornerRadius(3) // sets how rounded the corners are on each slice
 	    .padAngle(0.015) // effectively dictates the gap between slices
 	    .variable('importance')
@@ -311,9 +257,9 @@ function donutChart() {
 
             	//ajoute le titre
             	svg.append('text')
-                .html(title)            
+                .html(title)
                 .attr('text-anchor', 'middle');
-            	
+
             // ===========================================================================================
             // g elements to keep elements within svg modular
             svg.append('g').attr('class', 'slices');
@@ -390,11 +336,11 @@ function donutChart() {
 
                 // add tooltip (svg circle element) when mouse enters label or slice
                 selection.on('mouseenter', function (data) {
-                	
+
                 		//rend l'image trnasparente
                 		d3.select('#imgCard'+data.data.id).style('opacity', 0.35);
                 		//affiche le texte
-                		d3.select('#imgOver'+data.data.id).html(toolTipHTML(data));                		
+                		d3.select('#imgOver'+data.data.id).html(toolTipHTML(data));
 
                     /*
                 		svg.append('text')
@@ -418,7 +364,7 @@ function donutChart() {
 	            		//rend l'image normal
 	            		d3.select('#imgCard'+data.data.id).style('opacity', 1);
 	            		//supprime le texte
-	            		d3.select('#imgOver'+data.data.id).html("");                		                    
+	            		d3.select('#imgOver'+data.data.id).html("");
                 });
             }
 
@@ -511,7 +457,7 @@ function donutChart() {
         title = value;
         return chart;
     };
-    
+
     return chart;
 }
 

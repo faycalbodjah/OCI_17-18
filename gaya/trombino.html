@@ -52,19 +52,14 @@
 
     <!-- just for test -->
    <!-- <div class="freebirdFormviewerViewItemsItemItemTitle freebirdCustomFont" dir="auto" id="i156" role="heading" aria-level="2" aria-describedby="i.desc.2089997070">Langues</div>
-
-
 <div class="freebirdFormviewerViewItemsItemItemTitle freebirdCustomFont" dir="auto" id="i90" role="heading" aria-level="2" aria-describedby="i.desc.83169604">Vos compétences : logiciel</div>-->
 			
 <script>
-
 var dataPhoto, dataForm;
 //var vals = {"Pas besoin":1, "Besoin d'approfondissement":5, "Besoin urgent":10, "je ne connais pas du tout":1,"je connais un peu":5,"je me débrouille":10,"je suis expert(e)":20}; this is for another google form, 
 var vals = {"pas bon":15,"mauvais":5,"trop fort":20,"genie":50,"médiocre":10,"connais pas":1,"souvent":20,"jamais":1,"parfois":10,"abusé":30};
-
 //récupération des photos du groupe flickr
 //merci beaucoup à https://etienner.fr/flickr-json
-
 // i added the rest of the values needed for graphes : images , loisirs and réseau social.
 var urlFlickr = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=79672885f8a018343cd8849f57e8a50a&photoset_id=72157691842376304&extras=original_format&format=json&jsoncallback=?"; 
 $.getJSON(urlFlickr,
@@ -80,7 +75,6 @@ function(data){
         $("<img/>").attr({src: photo, alt: item.title}).appendTo("#images").wrap("<li id='photo"+i+"'><a href=' "+ url +"' title=' "+ item.title +" ' ></a></li>");
     });
     Fin de la boucle*/
-
 	//récupération des données du formulaire google
 	var url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQp7S2oy16Ft_Ns-JL1tjdj01MYvUpdaQD1hBiuVgBFLT_Q7CMaa4VdEhr1PTzwh_xgynwHU3r_opkd/pub?gid=1179672232&single=true&output=csv';
     //var url = "data/LPDesignWebMobile_17-18.csv";        
@@ -94,9 +88,6 @@ function(data){
 				var prop = i.substring(i.indexOf("[")+1,i.indexOf("]")); 
 				var v = d[i];
 				var n = vals[v];
-
-
-
 				//alert("i"+ i +"value "+n); i used this just to see if the value are undefined.
 				if (n != null )
 				{
@@ -124,7 +115,6 @@ function(data){
 						if(i.indexOf("Réseau social")!== -1){
 							d.reponses.reseausocial.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
 						}
-
 				}
               //just for test 
               /* else
@@ -132,7 +122,6 @@ function(data){
                     d.reponses.reseausocial.push({'prop':prop,'importance':n,'expression':v,'id':d['num photo']});
                     alert(i);
                 }*/
-
 			}
 		});		
 		
@@ -163,7 +152,6 @@ function(data){
 				</p>
 		  </div>
 		</div>
-
 		*/
 		var cards = d3.select('#etuCards').selectAll(".col-sm-3 mb-4").data(dataForm).enter()
 			.append('div').attr('class','col-sm-3 mb-4')
@@ -223,10 +211,7 @@ function(data){
 				    		});		
 	});
 });
-
-
 var toto = 1;
-
 function drawGraphReponse(idE, titre, data){
 	/*à voir si dimple marche mieux
     var svg = dimple.newSvg("#"+idE, 200, 200);
@@ -258,7 +243,6 @@ function drawGraphReponse(idE, titre, data){
         .datum(data) // bind data to the div
         .call(donut); // draw chart in div
 }
-
 //merci à https://bl.ocks.org/mbhall88/b2504f8f3e384de4ff2b9dfa60f325e2
 function donutChart() {
     var width,
@@ -272,20 +256,16 @@ function donutChart() {
         cornerRadius, // sets how rounded the corners are on each slice
         percentFormat = d3.format(',.2%'),
         title;
-
     function chart(selection){
         selection.each(function(data) {
             // generate chart
-
             // ===========================================================================================
             // Set up constructors for making donut. See https://github.com/d3/d3-shape/blob/master/README.md
             var radius = Math.min(width, height) / 2;
-
             // creates a new pie generator
             var pie = d3.pie()
                 .value(function(d) { return floatFormat(d[variable]); })
                 .sort(null);
-
             // contructs and arc generator. This will be used for the donut. The difference between outer and inner
             // radius will dictate the thickness of the donut
             var arc = d3.arc()
@@ -293,13 +273,11 @@ function donutChart() {
                 .innerRadius(radius * 0.6)
                 .cornerRadius(cornerRadius)
                 .padAngle(padAngle);
-
             // this arc is used for aligning the text labels
             var outerArc = d3.arc()
                 .outerRadius(radius * 0.9)
                 .innerRadius(radius * 0.9);
             // ===========================================================================================
-
             // ===========================================================================================
             // append the svg object to the selection
             var svg = selection.append('svg')
@@ -308,7 +286,6 @@ function donutChart() {
               .append('g')
                 .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
             // ===========================================================================================
-
             	//ajoute le titre
             	svg.append('text')
                 .html(title)            
@@ -320,7 +297,6 @@ function donutChart() {
             svg.append('g').attr('class', 'labelName');
             svg.append('g').attr('class', 'lines');
             // ===========================================================================================
-
             // ===========================================================================================
             // add and colour the donut slices
             var path = svg.select('.slices')
@@ -330,7 +306,6 @@ function donutChart() {
                 .attr('fill', function(d) { return colour(d.data[category]); })
                 .attr('d', arc);
             // ===========================================================================================
-
             // ===========================================================================================
             /* add text labels
             var label = svg.select('.labelName').selectAll('text')
@@ -342,11 +317,9 @@ function donutChart() {
                     return d.data[category] + ': <tspan>' + percentFormat(d.data[variable]) + '</tspan>';
                 })
                 .attr('transform', function(d) {
-
                     // effectively computes the centre of the slice.
                     // see https://github.com/d3/d3-shape/blob/master/README.md#arc_centroid
                     var pos = outerArc.centroid(d);
-
                     // changes the point to be on left or right depending on where label is.
                     pos[0] = radius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1);
                     return 'translate(' + pos + ')';
@@ -357,7 +330,6 @@ function donutChart() {
                 });
             */
             // ===========================================================================================
-
             /* ===========================================================================================
             // add lines connecting labels to slice. A polyline creates straight lines connecting several points
             var polyline = svg.select('.lines')
@@ -365,7 +337,6 @@ function donutChart() {
                 .data(pie)
               .enter().append('polyline')
                 .attr('points', function(d) {
-
                     // see label transform function for explanations of these three lines.
                     var pos = outerArc.centroid(d);
                     pos[0] = radius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1);
@@ -373,21 +344,16 @@ function donutChart() {
                 });
             */
             // ===========================================================================================
-
             // ===========================================================================================
             // add tooltip to mouse events on slices and labels
             d3.selectAll('.labelName text, .slices path').call(toolTip);
             // ===========================================================================================
-
             // ===========================================================================================
             // Functions
-
             // calculates the angle for the middle of a slice
             function midAngle(d) { return d.startAngle + (d.endAngle - d.startAngle) / 2; }
-
             // function that creates and adds the tool tip to a selected element
             function toolTip(selection) {
-
                 // add tooltip (svg circle element) when mouse enters label or slice
                 selection.on('mouseenter', function (data) {
                 	
@@ -395,7 +361,6 @@ function donutChart() {
                 		d3.select('#imgCard'+data.data.id).style('opacity', 0.35);
                 		//affiche le texte
                 		d3.select('#imgOver'+data.data.id).html(toolTipHTML(data));                		
-
                     /*
                 		svg.append('text')
                         .attr('class', 'toolCircle')
@@ -403,7 +368,6 @@ function donutChart() {
                         .html(toolTipHTML(data)) // add text to the circle.
                         .style('font-size', '.9em')
                         .style('text-anchor', 'middle'); // centres text in tooltip
-
                     svg.append('circle')
                         .attr('class', 'toolCircle')
                         .attr('r', radius * 0.55) // radius of tooltip circle
@@ -411,7 +375,6 @@ function donutChart() {
                         .style('fill-opacity', 0.35);
 					*/
                 });
-
                 // remove the tooltip when mouse leaves the slice/label
                 selection.on('mouseout', function (data) {
                     d3.selectAll('.toolCircle').remove();
@@ -421,22 +384,17 @@ function donutChart() {
 	            		d3.select('#imgOver'+data.data.id).html("");                		                    
                 });
             }
-
             // function to create the HTML string for the tool tip. Loops through each key in data object
             // and returns the html string key: value
             function toolTipHTML(data) {
-
             		var tip = '<h6 class="card-title">'+data.data.prop+'</h6>'
             		tip += '<p class="card-text">'+data.data.expression+'</p>';
                 /*
             		var tip = '',
                     i   = 0;
-
                 for (var key in data.data) {
-
                     // if value is a number, format it as a percentage
                     var value = (!isNaN(parseFloat(data.data[key]))) ? percentFormat(data.data[key]) : data.data[key];
-
                     // leave off 'dy' attr for first tspan so the 'dy' attr on text element works. The 'dy' attr on
                     // tspan effectively imitates a line break.
                     if (i === 0) tip += '<tspan x="0">' + key + ': ' + value + '</tspan>';
@@ -447,66 +405,59 @@ function donutChart() {
                 return tip;
             }
             // ===========================================================================================
-
         });
     }
-
     // getter and setter functions. See Mike Bostocks post "Towards Reusable Charts" for a tutorial on how this works.
     chart.width = function(value) {
         if (!arguments.length) return width;
         width = value;
         return chart;
     };
-
     chart.height = function(value) {
         if (!arguments.length) return height;
         height = value;
         return chart;
     };
-
     chart.margin = function(value) {
         if (!arguments.length) return margin;
         margin = value;
         return chart;
     };
-
     chart.radius = function(value) {
         if (!arguments.length) return radius;
         radius = value;
         return chart;
     };
-
     chart.padAngle = function(value) {
         if (!arguments.length) return padAngle;
         padAngle = value;
         return chart;
     };
-
     chart.cornerRadius = function(value) {
         if (!arguments.length) return cornerRadius;
         cornerRadius = value;
         return chart;
     };
-
-    chart.colour = function(value) {
+    
+chart.colour = function(value) {
         if (!arguments.length) return colour;
         colour = value;
         return chart;
     };
-
-    chart.variable = function(value) {
+    
+chart.variable = function(value) {
         if (!arguments.length) return variable;
         variable = value;
         return chart;
     };
-
-    chart.category = function(value) {
+   
+ chart.category = function(value) {
         if (!arguments.length) return category;
         category = value;
         return chart;
     };
-
-    chart.title = function(value) {
+    
+chart.title = function(value) {
         if (!arguments.length) return title;
         title = value;
         return chart;
@@ -514,9 +465,7 @@ function donutChart() {
     
     return chart;
 }
-
 //Fin appel JSON
-
 </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
