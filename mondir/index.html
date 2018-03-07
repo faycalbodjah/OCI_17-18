@@ -1,6 +1,38 @@
-<html>
-<body style="background: red;">
-<p>ceci est un test</p>
-<footer></footer>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+
+	<INCLURE {fond=inc/head}>
+
+  <body id="page-top">
+
+	<INCLURE {fond=inc/sideNav}>
+
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          #NOM_SITE_SPIP
+          <div class="subheading mb-5">#SLOGAN_SITE_SPIP
+          </div>
+          <p class="mb-5">#DESCRIPTIF_SITE_SPIP</p>
+	  
+	<INCLURE {fond=inc/etuIcones}>
+          
+        </div>
+      </section>
+	  
+	  <BOUCLE_sources(ARTICLES)>
+		<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="#URL_ARTICLE">
+        <div class="my-auto">
+          <h2 class="mb-5">#TITRE</h2>
+		  #TEXTE 
+        </div>
+      </section>
+	  </BOUCLE_sources>
+
+    </div>
+
+    <INCLURE {fond=inc/footer}>
+
+  </body>
 </html>
