@@ -9,18 +9,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="#CHEMIN{assets/images/logo.png}" alt=""></a>
+		      <a class="navbar-brand" href="#URL_SITE_SPIP">
+		      <img src="IMG/siteon0.png" style="height:30px;width:30px;float:left;" />
+		      #NOM_SITE_SPIP</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="custom-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li> <a href="#home"> Accueil </a> </li>
+                        <li> <a href="#"><:accueil_site:></a> </li>
 			
-		<BOUCLEart(ARTICLES){tout}>
-		     <li> <a > #TEXTE </a> </li>
-		
-	        </BOUCLEart>
-           
+			<BOUCLE_ariane(HIERARCHIE){id_rubrique}>
+			   <li class="active"><a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></li>
+			 </BOUCLE_ariane>
           
          
                     </ul>
