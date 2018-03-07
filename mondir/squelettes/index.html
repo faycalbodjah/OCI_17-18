@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<INCLURE {fond=inc/head}>
+
+  <body id="page-top">
+
+	<INCLURE {fond=inc/sideNav}>
+
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          #NOM_SITE_SPIP
+          <div class="subheading mb-5">#SLOGAN_SITE_SPIP
+            <a href="mailto:#EMAIL_WEBMASTER">#EMAIL_WEBMASTER</a>
+          </div>
+          <p class="mb-5">#DESCRIPTIF_SITE_SPIP</p>
+          <ul class="list-inline list-social-icons mb-0">
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/MondirS">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/mondir-jaatar-a46166128/">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/TMTakas">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+	  
+	  <BOUCLE_sources(ARTICLES)>
+		<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="#URL_ARTICLE">
+        <div class="my-auto">
+          <h2 class="mb-5">#TITRE</h2>
+		  #TEXTE 
+        </div>
+      </section>
+	  </BOUCLE_sources>
+
+    </div>
+
+    <INCLURE {fond=inc/footer}>
+
+  </body>
+</html>

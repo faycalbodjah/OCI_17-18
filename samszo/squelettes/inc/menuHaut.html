@@ -1,0 +1,20 @@
+<div class="top-menu">
+		<span class="menu"> </span> 
+			<ul class="nav">
+					<li><a class="scroll" href="#home">HOME</a></li>
+					<li><a class="scroll" href="#about">ABOUT</a></li>
+					<li><a class="scroll" href="#work">WORK</a></li>
+					<li><a class="scroll" href="#contact">CONTACT</a></li>
+				</ul>
+				<div class="logo">
+					<a href="#URL_SITE_SPIP">[(#LOGO_SITE_SPIP||image_reduire{80,80})]</a>
+				</div>
+				<div class="clearfix"> </div>
+	</div>
+				 <!-- script-for-menu -->
+		 <script>
+				$("span.menu").click(function(){
+					$(".top-menu ul").slideToggle("slow" , function(){
+					});
+				});
+		 </script>
