@@ -1,0 +1,49 @@
+<BOUCLErub(RUBRIQUES){id_rubrique}>
+      <!-- Works Section -->
+    <section id="works#ID_RUBRIQUE" class="works-section section-padding">
+      <div class="container">
+        <h2 class="section-title wow fadeInUp">#TITRE</h2>
+
+        <ul class="list-inline" id="filter">
+            <li><a class="active" data-group="all">All</a></li>
+	    <BOUCLEArtBrancheRub(ARTICLES){branche}>
+		<BOUCLEmotArtSousRub(MOTS){id_article}{unique}{par titre}>
+		<li><a data-group="mot#ID_MOT">#TITRE</a></li>		  
+		</BOUCLEmotArtSousRub> 
+	    </BOUCLEArtBrancheRub>		  	    
+        </ul>
+
+        <div class="row">
+          <div id="grid">
+	    <BOUCLEArtBrancheRubDetail(ARTICLES){branche}>
+	  
+            <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" 
+		  data-groups='[
+		<BOUCLEmotArt(MOTS){id_article}{','}>
+		"mot#ID_MOT"		  
+		</BOUCLEmotArt>]'>
+              <div class="portfolio-bg">
+                <div class="portfolio">
+                  <div class="tt-overlay"></div>
+                  <div class="links">
+                    <a class="image-link" href="#CHEMIN{assets/images/works/portfolio-1.jpg}">
+		    <i class="fa fa-search-plus"></i>
+		    </a>
+                    <a href="#URL_ARTICLE"><i class="fa fa-link"></i></a>                          
+                  </div><!-- /.links -->
+                  <img src="#CHEMIN{assets/images/works/portfolio-1.jpg}" alt="image">
+                  <div class="portfolio-info">
+                    <h3>#TITRE</h3>
+                  </div><!-- /.portfolio-info -->
+                </div><!-- /.portfolio -->
+              </div><!-- /.portfolio-bg -->
+            </div><!-- /.portfolio-item -->
+
+	    </BOUCLEArtBrancheRubDetail>
+
+
+          </div><!-- /#grid -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section><!-- End Works Section -->  
+</BOUCLErub>
