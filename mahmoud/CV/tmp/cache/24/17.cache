@@ -1,0 +1,70 @@
+a:2:{s:9:"nom_cache";s:38:"2417f0781fab551549c46c790b1bfadb.cache";s:6:"valeur";a:12:{s:9:"squelette";s:37:"html_b49902663de964dcd6b1473223c43424";s:6:"source";s:33:"squelettes/inc/resumesection.html";s:11:"process_ins";s:4:"html";s:11:"invalideurs";a:1:{s:5:"cache";s:38:"2417f0781fab551549c46c790b1bfadb.cache";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"texte";s:2424:"<!-- Resume Section -->
+<div id="resume" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>Experience</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="timeline">
+          <li>
+            <div class="timeline-image">
+              <h4>Feb 2013 <br>
+                - <br>
+                Present </h4>
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>Creative Agency</h4>
+                <h4 class="subheading">UX Developer</h4>
+              </div>
+              <div class="timeline-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+              <h4>Nov 2011 <br>
+                - <br>
+                Jan 2013 </h4>
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>Creative Agency</h4>
+                <h4 class="subheading">Front-end Developer</h4>
+              </div>
+              <div class="timeline-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-image">
+              <h4>Dec 2009 <br>
+                - <br>
+                May 2011 </h4>
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>Creative Agency</h4>
+                <h4 class="subheading">UX Designer</h4>
+              </div>
+              <div class="timeline-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section-title center">
+      <h2>Education</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="timeline">";s:5:"notes";s:0:"";s:8:"contexte";a:5:{s:4:"lang";s:2:"fr";s:4:"date";s:19:"2018-03-07 14:03:08";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2018-03-07 14:03:08";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1520427788;s:2:"gz";b:0;s:3:"sig";i:1943588095;}}

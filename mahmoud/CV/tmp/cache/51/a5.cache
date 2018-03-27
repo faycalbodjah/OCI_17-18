@@ -1,0 +1,11 @@
+a:2:{s:9:"nom_cache";s:38:"51a554549fa724db1fbbc8795bcdab4e.cache";s:6:"valeur";a:12:{s:9:"squelette";s:37:"html_cae74764336fc50ffc1dbdcb53de459b";s:6:"source";s:30:"squelettes/inc/navigation.html";s:11:"process_ins";s:4:"html";s:11:"invalideurs";a:1:{s:5:"cache";s:38:"51a554549fa724db1fbbc8795bcdab4e.cache";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"texte";s:405:"<!-- Navigation -->
+<div id="nav">
+  <nav class="navbar navbar-custom">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+        <a class="navbar-brand page-scroll" href="#page-top">
+     
+          
+Mahmoud KORCHID
+      </a> </div>";s:5:"notes";s:0:"";s:8:"contexte";a:5:{s:4:"lang";s:2:"fr";s:4:"date";s:19:"2018-03-07 14:03:08";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2018-03-07 14:03:08";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1520427788;s:2:"gz";b:0;s:3:"sig";i:642208816;}}

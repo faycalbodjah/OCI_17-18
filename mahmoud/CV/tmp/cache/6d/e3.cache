@@ -1,0 +1,29 @@
+a:2:{s:9:"nom_cache";s:38:"6de321984f817a2a6b49c9e35749f57b.cache";s:6:"valeur";a:12:{s:9:"squelette";s:37:"html_67ab2221242227b34f97a9759edfa07d";s:6:"source";s:35:"squelettes-dist/inclure/navsub.html";s:11:"process_ins";s:4:"html";s:11:"invalideurs";a:2:{s:5:"cache";s:38:"04d0482f9e8178be66d4f2512a20d745.cache";s:7:"session";s:8:"874798e1";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"texte";s:370:"
+
+
+<div class="menu menu_rubriques">
+	<h2>Les Promotions </h2>
+	<ul>
+	
+		<li>
+			<a href="spip.php?rubrique3" class="on">2017-2018</a>
+			
+			<ul>
+				 
+				<li><a href="spip.php?rubrique4" class="on">Mahmoud Korchid</a>
+			<ul>
+				 
+				<li><a href="spip.php?rubrique5" class="on">Projets </a>	</li>
+				
+			</ul>
+				</li>
+				
+			</ul>
+			
+		</li>
+	
+
+	</ul>
+</div>
+
+";s:5:"notes";s:0:"";s:8:"contexte";a:6:{s:11:"id_rubrique";s:1:"5";s:4:"lang";s:2:"fr";s:4:"date";s:19:"2018-02-21 13:13:16";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2018-02-21 13:13:16";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1519215196;s:2:"gz";b:0;s:3:"sig";i:1718928844;}}

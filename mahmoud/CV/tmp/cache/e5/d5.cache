@@ -1,0 +1,86 @@
+a:2:{s:9:"nom_cache";s:38:"e5d5b82eab335643f46122afa25f54f5.cache";s:6:"valeur";a:12:{s:9:"squelette";s:37:"html_5a52fcf2cc698fd735e02e9bfa07122f";s:6:"source";s:30:"squelettes-dist/recherche.html";s:11:"process_ins";s:3:"php";s:11:"invalideurs";a:1:{s:5:"cache";s:38:"e5d5b82eab335643f46122afa25f54f5.cache";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"texte";s:3459:"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if lt IE 7 ]> <html dir="ltr" lang="fr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" class="ltr fr no-js ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <html dir="ltr" lang="fr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" class="ltr fr no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html dir="ltr" lang="fr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" class="ltr fr no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]> <html dir="ltr" lang="fr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" class="ltr fr no-js ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html dir="ltr" lang="fr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" class="ltr fr no-js"> <!--<![endif]-->
+<head>
+	<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
+	<title>Résultats de la recherche - CV OCI</title>
+	<?php echo recuperer_fond( 'inclure/head', array('robots' => 'none',
+	'lang' => 'fr'), array("compil"=>array('squelettes-dist/recherche.html','html_5a52fcf2cc698fd735e02e9bfa07122f','',10,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+</head>
+
+<body class="pas_surlignable page_recherche">
+<div class="page">
+
+	<?php echo recuperer_fond( 'inclure/header', array('lang' => 'fr'), array("compil"=>array('squelettes-dist/recherche.html','html_5a52fcf2cc698fd735e02e9bfa07122f','',16,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+	<?php echo recuperer_fond( 'inclure/nav', array_merge(array (
+  'page' => 'recherche',
+  'recherche' => '',
+  'date' => '2018-02-21 13:43:48',
+  'date_default' => true,
+  'date_redac' => '2018-02-21 13:43:48',
+  'date_redac_default' => true,
+),array('lang' => 'fr')), array("compil"=>array('squelettes-dist/recherche.html','html_5a52fcf2cc698fd735e02e9bfa07122f','',17,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+	
+	<div class="main">
+		
+		<div class="wrapper">
+		<div class="content" id="content">
+			<p class="arbo"><a href="http://localhost/cv/">Accueil</a> &gt; Rechercher</p>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</div><!--.content-->
+		</div><!--.wrapper-->
+		
+		
+		<div class="aside">
+			<?php echo recuperer_fond( 'inclure/navsub', array('id_rubrique' => '',
+	'lang' => 'fr'), array("compil"=>array('squelettes-dist/recherche.html','html_5a52fcf2cc698fd735e02e9bfa07122f','',120,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+			<?php 
+include_once("./" . _DIR_RACINE . "ecrire/balise/formulaire_.php");
+if ($lang_select = "fr") $lang_select = lang_select($lang_select);
+inserer_balise_dynamique(balise_FORMULAIRE__dyn('FORMULAIRE_RECHERCHE'), array('squelettes-dist/recherche.html', 'html_5a52fcf2cc698fd735e02e9bfa07122f', '', 121, 'fr'));
+if ($lang_select) lang_select();
+?>
+		</div><!--.aside-->
+	</div><!--.main-->
+	
+	<?php echo recuperer_fond( 'inclure/footer', array_merge(array (
+  'page' => 'recherche',
+  'recherche' => '',
+  'date' => '2018-02-21 13:43:48',
+  'date_default' => true,
+  'date_redac' => '2018-02-21 13:43:48',
+  'date_redac_default' => true,
+),array('self' => 'spip.php?page=recherche&amp;recherche=',
+	'lang' => 'fr')), array("compil"=>array('squelettes-dist/recherche.html','html_5a52fcf2cc698fd735e02e9bfa07122f','',125,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+</div><!--.page-->
+</body>
+</html>";s:5:"notes";s:0:"";s:8:"contexte";a:6:{s:4:"page";s:9:"recherche";s:9:"recherche";s:0:"";s:4:"date";s:19:"2018-02-21 13:43:48";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2018-02-21 13:43:48";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1519217028;s:2:"gz";b:0;s:3:"sig";i:-1257525417;}}

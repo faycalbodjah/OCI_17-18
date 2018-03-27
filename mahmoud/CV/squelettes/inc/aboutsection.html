@@ -1,0 +1,24 @@
+<!-- About Section -->
+<div id="about">
+  <div class="container">
+    <div class="section-title text-center center">
+      <h2><BOUCLEn(ARTICLES){id_article=2}> #TEXTE </BOUCLEn></h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center"><BOUCLEs(ARTICLES){id_article=2}>#LOGO_ARTICLE</BOUCLEs></div>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="about-text">
+	    
+	<BOUCLE_sources(AUTEURS)>
+     
+          <p>#BIO</p>
+
+      </BOUCLE_sources>
+          
+          <p class="text-center"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
