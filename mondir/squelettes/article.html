@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<INCLURE {fond=inc/head}>
+
+  <body id="page-top">
+  
+  <INCLURE {fond=inc/sideNavArticle}>
+
+    <div class="container-fluid p-0">
+
+
+     
+	  <BOUCLEn(ARTICLES){id_article}>
+	  
+	  	  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="">
+		  
+		  <INCLURE {fond=inc/navigation,id_rubrique}>
+		  
+        <div class="my-auto">
+          <h2 class="mb-5">#TITRE</h2>
+			
+			#TEXTE 
+			
+        </div>
+	  
+	  </BOUCLEn>
+	  
+      </section>
+
+    </div>
+
+    <INCLURE {fond=inc/footer}>
+
+  </body>
+</html>
