@@ -1,0 +1,79 @@
+a:2:{s:9:"nom_cache";s:38:"b0ab5bcd5254afa87aa453a8809b3bb2.cache";s:6:"valeur";a:12:{s:9:"squelette";s:37:"html_c3221cb01ae9c797bd5e8b632c548bff";s:6:"source";s:34:"squelettes/inc/contactsection.html";s:11:"process_ins";s:4:"html";s:11:"invalideurs";a:1:{s:5:"cache";s:38:"b0ab5bcd5254afa87aa453a8809b3bb2.cache";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"texte";s:3370:"<!-- Contact Section -->
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>Contact</h2>
+      <hr>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-4"> <i class="fa fa-map-marker fa-2x"></i>
+        <p>88 Rue Francoeur,<br>
+          Viry Châtillion, </p>
+      </div>
+      <div class="col-md-4"> <i class="fa fa-envelope-o fa-2x"></i>
+        <p>
+     
+          
+kourchid.mahmoud@gmail.com
+      </p>
+      </div>
+      <div class="col-md-4"> <i class="fa fa-phone fa-2x"></i>
+        <p> +753153038</p>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <h3>Leave me a message</h3>
+      <form name="sentMessage" id="contactForm" novalidate>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-default">Send Message</button>
+      </form>
+      <div class="social">
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a href="#"><i class="fa fa-github"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container text-center">
+    <div class="fnav">
+      <p>Copyright &copy; 2016 John Doe. Designed by <a href="http://www.templatewire.com" rel="nofollow">TemplateWire</a></p>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="squelettes/js/jquery.1.11.1.js"></script> 
+<script type="text/javascript" src="squelettes/js/bootstrap.js"></script> 
+<script type="text/javascript" src="squelettes/js/SmoothScroll.js"></script> 
+<script type="text/javascript" src="squelettes/js/easypiechart.js"></script> 
+<script type="text/javascript" src="squelettes/js/jquery.prettyPhoto.js"></script> 
+<script type="text/javascript" src="squelettes/js/jquery.isotope.js"></script> 
+<script type="text/javascript" src="squelettes/js/jquery.counterup.js"></script> 
+<script type="text/javascript" src="squelettes/js/waypoints.js"></script> 
+<script type="text/javascript" src="squelettes/js/jqBootstrapValidation.js"></script> 
+<script type="text/javascript" src="squelettes/js/contact_me.js"></script> 
+<script type="text/javascript" src="squelettes/js/main.js"></script>";s:5:"notes";s:0:"";s:8:"contexte";a:5:{s:4:"lang";s:2:"fr";s:4:"date";s:19:"2018-03-07 14:03:08";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2018-03-07 14:03:08";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1520427788;s:2:"gz";b:0;s:3:"sig";i:1473948999;}}

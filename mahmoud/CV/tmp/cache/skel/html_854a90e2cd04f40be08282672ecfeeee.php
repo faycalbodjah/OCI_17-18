@@ -1,0 +1,24 @@
+<?php
+
+/*
+ * Squelette : ../prive/squelettes/top/configurer_langage.html
+ * Date :      Wed, 21 Feb 2018 10:24:05 GMT
+ * Compile :   Wed, 07 Mar 2018 12:34:18 GMT
+ * Boucles :   
+ */ 
+//
+// Fonction principale du squelette ../prive/squelettes/top/configurer_langage.html
+// Temps de compilation total: 1.000 ms
+//
+
+function html_854a90e2cd04f40be08282672ecfeeee($Cache, $Pile, $doublons = array(), $Numrows = array(), $SP = 0) {
+
+	if (isset($Pile[0]["doublons"]) AND is_array($Pile[0]["doublons"]))
+		$doublons = nettoyer_env_doublons($Pile[0]["doublons"]);
+
+	$connect = '';
+	$page = barre_onglets('infos_perso','configurer_langage');
+
+	return analyse_resultat_skel('html_854a90e2cd04f40be08282672ecfeeee', $Cache, $page, '../prive/squelettes/top/configurer_langage.html');
+}
+?>

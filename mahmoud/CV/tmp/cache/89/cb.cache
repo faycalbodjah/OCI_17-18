@@ -1,0 +1,24 @@
+a:2:{s:9:"nom_cache";s:38:"89cbe20e3b3d4b7003e0540f6adb8e31.cache";s:6:"valeur";a:12:{s:9:"squelette";s:37:"html_140de96bff6d39fde273e3491a559b08";s:6:"source";s:32:"squelettes/inc/aboutsection.html";s:11:"process_ins";s:4:"html";s:11:"invalideurs";a:1:{s:5:"cache";s:38:"89cbe20e3b3d4b7003e0540f6adb8e31.cache";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"texte";s:888:"<!-- About Section -->
+<div id="about">
+  <div class="container">
+    <div class="section-title text-center center">
+      <h2> <p>A propos de moi&nbsp;:</p> </h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center"><img class="spip_logo spip_logos" alt="" src="IMG/arton2.jpg?1520424849" width="1361" height="2048" /></div>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="about-text">
+	    
+	
+     
+          <p><p>Mahmoud KORCHID,29 ans ingénieur en développement Web et Mobile. 5 ans d&#8217;expérience. motivé par la satisfaction client et la mise en place de Systèmes d&#8217;information et leur développement. Capable d&#8217;expliquer Simplement la complexité de grands programmes.</p></p>
+
+      
+          
+          <p class="text-center"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>";s:5:"notes";s:0:"";s:8:"contexte";a:5:{s:4:"lang";s:2:"fr";s:4:"date";s:19:"2018-03-07 14:03:08";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2018-03-07 14:03:08";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1520427788;s:2:"gz";b:0;s:3:"sig";i:13471898;}}

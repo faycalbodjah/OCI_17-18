@@ -1,0 +1,31 @@
+a:2:{s:9:"nom_cache";s:38:"6de995c5b91d86ea12bc0e2a730fd959.cache";s:6:"valeur";a:12:{s:9:"squelette";s:37:"html_f8ddd13088987a79e7954f756fff8d14";s:6:"source";s:39:"squelettes/inc/AchievementsSection.html";s:11:"process_ins";s:4:"html";s:11:"invalideurs";a:1:{s:5:"cache";s:38:"6de995c5b91d86ea12bc0e2a730fd959.cache";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"texte";s:1108:"<!-- Achievements Section -->
+<div id="achievements" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>Statistiques</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-delay="200ms">
+        <div class="achievement-box"> <span class="count">310</span>
+          <h4>Satisfaction Client</h4>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-delay="400ms">
+        <div class="achievement-box"> <span class="count">4700</span>
+          <h4>Heures de travail</h4>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-delay="600ms">
+        <div class="achievement-box"> <span class="count">30</span>
+          <h4>prix remportés</h4>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-delay="800ms">
+        <div class="achievement-box"> <span class="count">8</span>
+          <h4>Années d'Experience</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>";s:5:"notes";s:0:"";s:8:"contexte";a:5:{s:4:"lang";s:2:"fr";s:4:"date";s:19:"2018-03-07 14:03:08";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2018-03-07 14:03:08";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1520427788;s:2:"gz";b:0;s:3:"sig";i:1346636218;}}
