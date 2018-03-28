@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<INCLURE {fond=inc/head}>
+
+  <body id="page-top">
+  
+  <INCLURE {fond=inc/sideNavArticle}>
+
+    <div class="container-fluid p-0">
+
+	<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="mes_projet">
+        <div class="my-auto">
+          <h2 class="mb-5">Mes Projets</h2>
+		  <INCLURE {fond=inc/navigation,id_rubrique}>
+		  <br>
+			<p>Veuillez sélectionner une sous catégorie :</p>
+			<BOUCLE_rubrique(RUBRIQUES){id_parent = #ID_RUBRIQUE}>
+				<a href="#URL_RUBRIQUE" style="margin-right:20px;">#TITRE</a>
+			</BOUCLE_rubrique>
+			
+			<br>
+			<br>
+			
+			<p>Les projets :</p>
+			
+			<BOUCLE_art(ARTICLES){id_rubrique = #ID_RUBRIQUE }>
+				<a href="#URL_ARTICLE" style="margin-right:20px;">#TITRE</a>
+			</BOUCLE_art>
+        </div>
+      </section>
+
+    </div>
+
+    <INCLURE {fond=inc/footer}>
+
+  </body>
+</html>
